@@ -6,7 +6,7 @@ import { OFFICIAL_URL } from '@/const/url';
 
 import pkg from '../../package.json';
 
-const title = 'LobeChat';
+const title = 'VdnGpt';
 const { description, homepage } = pkg;
 
 const { SITE_URL = OFFICIAL_URL } = getServerConfig();
@@ -23,10 +23,10 @@ const metadata: Metadata = {
   description,
   icons: {
     apple:
-      'https://registry.npmmirror.com/@lobehub/assets-favicons/latest/files/assets/apple-touch-icon.png',
-    icon: 'https://registry.npmmirror.com/@lobehub/assets-favicons/latest/files/assets/favicon-32x32.png',
+      'https://g1.vdnlink.cn/vdngptlogo.svg',
+    icon: 'https://g1.vdnlink.cn/vdngptlogo.svg',
     shortcut:
-      'https://registry.npmmirror.com/@lobehub/assets-favicons/latest/files/assets/favicon.ico',
+      'https://g1.vdnlink.cn/vdngptlogo.svg',
   },
   manifest: noManifest ? undefined : '/manifest.json',
   metadataBase: new URL(SITE_URL),

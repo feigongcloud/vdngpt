@@ -99,6 +99,7 @@ export default {
     'zh-TW': '繁体中文',
   },
   layoutInitializing: '正在加载布局...',
+  logout:'退出',
   modelProvider: {
     azure: 'Azure',
     bedrock: 'AWS Bedrock',

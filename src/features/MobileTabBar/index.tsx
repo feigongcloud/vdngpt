@@ -37,14 +37,14 @@ export default memo<Props>(({ className, tabBarKey }) => {
         },
         title: t('tab.chat'),
       },
-      {
-        icon: (active) => <Icon className={active ? styles.active : undefined} icon={Bot} />,
-        key: SidebarTabKey.Market,
-        onClick: () => {
-          router.push('/market');
-        },
-        title: t('tab.market'),
-      },
+      // {
+      //   icon: (active) => <Icon className={active ? styles.active : undefined} icon={Bot} />,
+      //   key: SidebarTabKey.Market,
+      //   onClick: () => {
+      //     router.push('/market');
+      //   },
+      //   title: t('tab.market'),
+      // },
       {
         icon: (active) => <Icon className={active ? styles.active : undefined} icon={User} />,
         key: SidebarTabKey.Setting,

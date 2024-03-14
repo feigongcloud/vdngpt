@@ -81,7 +81,8 @@ const currentAgentMeta = (s: SessionStore): MetaData => {
   const isInbox = sessionSelectors.isInboxSession(s);
 
   const defaultMeta = {
-    avatar: isInbox ? DEFAULT_INBOX_AVATAR : DEFAULT_AVATAR,
+   // avatar: isInbox ? DEFAULT_INBOX_AVATAR : DEFAULT_AVATAR,
+    avatar:'https://g2.vdnlink.cn/vdncloud-ai.webp',
     backgroundColor: DEFAULT_BACKGROUND_COLOR,
     description: isInbox
       ? t('inbox.desc', { ns: 'chat' })

@@ -25,10 +25,12 @@ const Header = memo(() => {
   const { t } = useTranslation('chat');
   const [createSession] = useSessionStore((s) => [s.createSession]);
 
+
   return (
     <Flexbox className={styles.top} gap={16} padding={16}>
       <Flexbox distribution={'space-between'} horizontal>
-        <Logo className={styles.logo} size={36} type={'text'} />
+        {/* <Logo className={styles.logo} size={36} type={'text'} /> */}
+          <span  style={{color:"black","fontSize":30,"fontWeight":600}} >VdnGpt</span>  
         <ActionIcon
           icon={MessageSquarePlus}
           onClick={() => createSession()}

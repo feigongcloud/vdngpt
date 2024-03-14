@@ -10,6 +10,7 @@ import {
   Heart,
   Settings,
   Settings2,
+  LogOut
 } from 'lucide-react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
@@ -39,44 +40,44 @@ const BottomActions = memo<BottomActionProps>(({ tab }) => {
   useCheckLatestVersion();
 
   const items: MenuProps['items'] = [
-    {
-      icon: <Icon icon={HardDriveUpload} />,
-      key: 'import',
-      label: <DataImporter>{t('import')}</DataImporter>,
-    },
-    {
-      children: [
-        {
-          key: 'allAgent',
-          label: <div>{t('exportType.allAgent')}</div>,
-          onClick: configService.exportAgents,
-        },
-        {
-          key: 'allAgentWithMessage',
-          label: <div>{t('exportType.allAgentWithMessage')}</div>,
-          onClick: configService.exportSessions,
-        },
-        {
-          key: 'globalSetting',
-          label: <div>{t('exportType.globalSetting')}</div>,
-          onClick: configService.exportSettings,
-        },
-        {
-          type: 'divider',
-        },
-        {
-          key: 'all',
-          label: <div>{t('exportType.all')}</div>,
-          onClick: configService.exportAll,
-        },
-      ],
-      icon: <Icon icon={HardDriveDownload} />,
-      key: 'export',
-      label: t('export'),
-    },
-    {
-      type: 'divider',
-    },
+    // {
+    //   icon: <Icon icon={HardDriveUpload} />,
+    //   key: 'import',
+    //   label: <DataImporter>{t('import')}</DataImporter>,
+    // },
+    // {
+    //   children: [
+    //     {
+    //       key: 'allAgent',
+    //       label: <div>{t('exportType.allAgent')}</div>,
+    //       onClick: configService.exportAgents,
+    //     },
+    //     {
+    //       key: 'allAgentWithMessage',
+    //       label: <div>{t('exportType.allAgentWithMessage')}</div>,
+    //       onClick: configService.exportSessions,
+    //     },
+    //     {
+    //       key: 'globalSetting',
+    //       label: <div>{t('exportType.globalSetting')}</div>,
+    //       onClick: configService.exportSettings,
+    //     },
+    //     {
+    //       type: 'divider',
+    //     },
+    //     {
+    //       key: 'all',
+    //       label: <div>{t('exportType.all')}</div>,
+    //       onClick: configService.exportAll,
+    //     },
+    //   ],
+    //   icon: <Icon icon={HardDriveDownload} />,
+    //   key: 'export',
+    //   label: t('export'),
+    // },
+    // {
+    //   type: 'divider',
+    // },
     {
       icon: <Icon icon={Feather} />,
       key: 'feedback',
@@ -89,12 +90,12 @@ const BottomActions = memo<BottomActionProps>(({ tab }) => {
       label: t('changelog'),
       onClick: () => window.open(CHANGELOG, '__blank'),
     },
-    {
-      icon: <Icon icon={DiscordIcon} />,
-      key: 'wiki',
-      label: 'Discord',
-      onClick: () => window.open(DISCORD, '__blank'),
-    },
+    // {
+    //   icon: <Icon icon={DiscordIcon} />,
+    //   key: 'wiki',
+    //   label: 'Discord',
+    //   onClick: () => window.open(DISCORD, '__blank'),
+    // },
     {
       icon: <Icon icon={Heart} />,
       key: 'about',
@@ -102,32 +103,40 @@ const BottomActions = memo<BottomActionProps>(({ tab }) => {
       onClick: () => window.open(ABOUT, '__blank'),
     },
     {
-      type: 'divider',
-    },
-    {
       icon: <Icon icon={Settings} />,
       key: 'setting',
       label: (
         <Flexbox align={'center'} distribution={'space-between'} gap={8} horizontal>
-          {t('setting')} {hasNewVersion && <Badge count={t('upgradeVersion.hasNew')} />}
+          {t('setting')} {hasNewVersion===false && <Badge count={t('upgradeVersion.hasNew')} />}
         </Flexbox>
       ),
       onClick: () => {
         router.push('/settings/common');
       },
     },
+    {
+      type: 'divider',
+    },
+    {
+      icon: <Icon icon={LogOut} />,
+      key: 'logout',
+      label: t('logout'),
+      onClick: () => {
+          console.log(1)
+      },
+    },
   ];
 
   return (
     <>
-      <Link aria-label={'GitHub'} href={GITHUB} target={'_blank'}>
+      {/* <Link aria-label={'GitHub'} href={GITHUB} target={'_blank'}>
         <ActionIcon icon={Github} placement={'right'} title={'GitHub'} />
       </Link>
       <Link aria-label={t('document')} href={DOCUMENTS} target={'_blank'}>
         <ActionIcon icon={Book} placement={'right'} title={t('document')} />
-      </Link>
+      </Link> */}
       <Dropdown arrow={false} menu={{ items }} trigger={['click']}>
-        {hasNewVersion ? (
+        {hasNewVersion===false ? (
           <Flexbox>
             <ConfigProvider theme={{ components: { Badge: { dotSize: 8 } } }}>
               <Badge dot offset={[-4, 4]}>

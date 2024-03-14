@@ -58,7 +58,7 @@ const AvatarWithUpload = memo<AvatarWithUploadProps>(
           <Avatar
             alt={avatar ? 'userAvatar' : 'LobeChat'}
             height={size}
-            src={!!avatar ? avatar : imageUrl('logo.png')}
+            src={!!avatar ? avatar : imageUrl('vdncloud-ai-avatar.webp')}
             width={size}
           />
         </Upload>

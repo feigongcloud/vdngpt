@@ -31,6 +31,7 @@ const useStyles = createStyles(({ css }) => {
   };
 });
 
+// eslint-disable-next-line unused-imports/no-unused-vars
 const InputArea = memo<{ setExpand?: (expand: boolean) => void }>(({ setExpand }) => {
   const { t } = useTranslation('chat');
   const { styles } = useStyles();

@@ -56,6 +56,7 @@ const useStyles = createStyles(({ css, prefixCls, token }) => {
 
 const isMac = isMacOS();
 
+// eslint-disable-next-line unused-imports/no-unused-vars
 const Footer = memo<{ setExpand?: (expand: boolean) => void }>(({ setExpand }) => {
   const { t } = useTranslation('chat');
 

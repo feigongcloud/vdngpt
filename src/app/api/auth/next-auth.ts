@@ -9,7 +9,7 @@ const { AUTH0_CLIENT_ID, ENABLE_OAUTH_SSO, AUTH0_CLIENT_SECRET, AUTH0_ISSUER, NE
 declare module '@auth/core/jwt' {
   // Returned by the `jwt` callback and `auth`, when using JWT sessions
   interface JWT {
-    userId?: string;
+    userId: string;
   }
 }
 

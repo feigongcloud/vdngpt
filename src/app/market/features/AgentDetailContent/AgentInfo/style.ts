@@ -27,7 +27,7 @@ export const useStyles = createStyles(({ css, token, prefixCls, stylish }) => ({
       flex-direction: column;
     }
   `,
-  markdown: stylish.markdownInChat,
+  markdown: stylish.markdown,
   nav: css`
     padding-top: 8px;
   `,

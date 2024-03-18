@@ -16,7 +16,7 @@ const useStyles = createStyles(({ css, token, stylish }) => ({
     color: ${token.colorTextDescription};
     text-align: center;
   `,
-  markdown: stylish.markdownInChat,
+  markdown: stylish.markdown,
 
   title: css`
     font-size: 20px;

@@ -33,7 +33,7 @@ interface PluginSettingsConfigProps {
 
 const useStyles = createStyles(({ css, token, stylish, cx }) => ({
   markdown: cx(
-    stylish.markdownInChat,
+    stylish.markdown,
     css`
       p {
         color: ${token.colorTextDescription};

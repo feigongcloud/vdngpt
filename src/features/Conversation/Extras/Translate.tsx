@@ -12,7 +12,7 @@ import { ChatTranslate } from '@/types/message';
 import BubblesLoading from '../components/BubblesLoading';
 
 const useStyles = createStyles(({ stylish }) => ({
-  markdown: stylish.markdownInChat,
+  markdown: stylish.markdown,
 }));
 
 interface TranslateProps extends ChatTranslate {

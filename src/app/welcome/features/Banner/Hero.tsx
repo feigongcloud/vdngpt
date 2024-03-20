@@ -1,11 +1,8 @@
-import dynamic from 'next/dynamic';
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
 import { genSize, useStyles } from './style';
 
-
-const LogoThree = dynamic(() => import('@lobehub/ui/es/LogoThree'));
 
 const Hero = memo<{ mobile?: boolean; width: number }>(({ width, mobile }) => {
   const size: any = {
@@ -32,7 +29,7 @@ const Hero = memo<{ mobile?: boolean; width: number }>(({ width, mobile }) => {
           position: 'relative',
         }}
       >
-        {mobile ? <LogoThree size={size.logo} /> : ''}
+        {mobile ? <img src='https://g2.vdnlink.cn/vdn-ai-lunch02.webp' style={{borderRadius:16}} width={108}/> : ''}
       </Flexbox>
       <div className={styles.title} style={{ fontSize: size.title }}>
         <strong style={mobile ? { fontSize: '1.2em' } : {}}>VdnGpt</strong>

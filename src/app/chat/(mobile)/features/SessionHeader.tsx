@@ -25,10 +25,10 @@ const Header = memo(() => {
   const avatar = useGlobalStore(commonSelectors.userAvatar);
   return (
     <MobileNavBar
-      center={<Logo type={'text'} />}
+      center={null}
       left={
         <div onClick={() => router.push('/settings')} style={{ marginLeft: 8 }}>
-          {avatar ? <Avatar avatar={avatar} size={28} /> : <Logo size={28} />}
+          {avatar ? <Avatar avatar={avatar} size={28} /> : <img src='https://g2.vdnlink.cn/vdn-ai-lunch02.webp' style={{borderRadius:14}}  width={28} />}
         </div>
       }
       right={

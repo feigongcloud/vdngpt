@@ -24,13 +24,13 @@ const nextAuth = NextAuth({
       }
       return token;
     },
-    // async session({ session, token }) {
-    //   // Pick userid from token
-    //   if (session.user) 
-    //     session.user.id = token.userId ?? session.user.id;
+    async session({ session, token }) {
+      // Pick userid from token
+      if (session.user) 
+        session.user.id = token.email ?? session.user.id;
       
-    //   return session;
-    // },
+      return session;
+    },
   },
   providers: ENABLE_OAUTH_SSO
     ? [
